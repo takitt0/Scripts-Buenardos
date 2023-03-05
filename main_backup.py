@@ -1,1 +1,4 @@
-print("Hallo world en el backup!")
+from main import Animal
+
+alien = Animal('Alien Matador', 'dispara lasers')
+print(alien)
