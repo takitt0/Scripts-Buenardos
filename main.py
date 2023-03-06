@@ -33,7 +33,7 @@ class Animal:
         return self
     
     def __repr__(self):
-        return f"Se llama {self.name} y esta {self.status}!"
+        return f"Roberto saluda a {self.name} y esta {self.status}!"
 
 if __name__ == "__main__":    
     perro = Animal("perro", "hace Woof!")
