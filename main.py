@@ -1,9 +1,29 @@
+import random
+
+class Objeto:
+    def __init__(self, name):
+        self.name = name
+    
+    def __repr__(self):
+        return f"Equipado {self.name}!"
+
 class Animal:
     def __init__(self, name, action):
         self.name = name
         self.action = action
-        self.status = "Alive"
-    
+        self.status = random.choice(["Alive", "Dead"])
+        self.mochila = []
+
+    def equipar(self, objeto):
+        if isinstance(objeto, Objeto):
+            self.mochila.append(objeto)
+        
+        return self
+
+    def change_name(self, new_name):
+        self.name = new_name
+        return self
+
     def change_status(self, new_status):
         self.status = new_status
         return self
@@ -14,10 +34,13 @@ class Animal:
     
     def __repr__(self):
         return f"Se llama {self.name} y esta {self.status}!"
-    
-perro = Animal("perro", "hace Woof!")
-gato = Animal("gato", "hace Miau!")
-print("Hallo, Ciao!")
 
-perro.make_action()
-gato.make_action()
+if __name__ == "__main__":    
+    perro = Animal("perro", "hace Woof!")
+    gato = Animal("gato", "hace Miau!")
+    pala = Objeto("Pala")
+    print("Hallo, Ciao!")
+
+    print(perro.status)
+    gato.make_action()
+    gato.equipar(pala)
