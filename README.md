@@ -5,4 +5,6 @@
 * Step 4: Run python
 * Step 5: Get more shit done
 
-```pip install docker```
+```bash
+pip install docker
+```
